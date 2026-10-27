@@ -21,8 +21,9 @@ Open the local address printed by Next.js. To check the project and build for pr
 npm run lint
 npm run typecheck
 npm run build
-npm start
 ```
+
+The build writes a static website to `out/`. To preview that folder locally, run `npx serve out`.
 
 ## Editing content
 
@@ -34,7 +35,7 @@ npm start
 
 ## Deployment
 
-To deploy this Next.js application to a provider that supports Next.js, such as Vercel, import the repository, use the default Next.js build settings, and run `npm run build` before deploying. No environment variables are required.
+For Cloudflare Workers Builds, use `npm run build` as the build command and `npx wrangler deploy` as the deploy command. `next.config.mjs` creates the `out/` static export and `wrangler.jsonc` tells Wrangler to upload it. No environment variables are required. The `out/` directory can also be deployed to other static hosting providers.
 
 ## Project links
 
